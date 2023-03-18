@@ -93,6 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4786615461208551939}
+  - component: {fileID: 5882522354219329833}
+  - component: {fileID: 5748957605672216018}
   m_Layer: 0
   m_Name: pfGoldHarvester
   m_TagString: Untagged
@@ -116,3 +118,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5882522354219329833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786615461208551938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c045b4cbf7d73a24fb98ab9aaaee4853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5748957605672216018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786615461208551938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b55eba3b5efa2947ad18606fd517788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingType: {fileID: 11400000, guid: 87d8c9c9dda89984b846056598c17111, type: 2}

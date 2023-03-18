@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    // Every RTso with match with the certain int for the value
+    public static ResourceManager Instance { get; private set; }
+
+    // Every ResourceTypeSO with match with the certain int for the value
     private Dictionary<ResourceTypeSO, int> resourceAmountDictionary;
     private ResourceTypeListSO resourceTypeList;
 
     private void Awake() {
+            Instance = this;
+
         resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
 
         resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
@@ -21,22 +25,22 @@ public class ResourceManager : MonoBehaviour
 
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.T)) {
-            AddResource(resourceTypeList.list[0],2);
-            TestLogResourceAmountDictionary();
-        }
+    //private void Update() {
+        //if (Input.GetKeyDown(KeyCode.T)) {
+        //    AddResource(resourceTypeList.list[0],2);
+        //    TestLogResourceAmountDictionary();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Y)) {
-            AddResource(resourceTypeList.list[1], 5);
-            TestLogResourceAmountDictionary();
-        }
+        //if (Input.GetKeyDown(KeyCode.Y)) {
+        //    AddResource(resourceTypeList.list[1], 5);
+        //    TestLogResourceAmountDictionary();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.U)) {
-            AddResource(resourceTypeList.list[2], 8);
-            TestLogResourceAmountDictionary();
-        }
-    }
+        //if (Input.GetKeyDown(KeyCode.U)) {
+        //    AddResource(resourceTypeList.list[2], 8);
+        //    TestLogResourceAmountDictionary();
+        //}
+    //}
 
     private void TestLogResourceAmountDictionary() {
         foreach (ResourceTypeSO resourceType in resourceAmountDictionary.Keys) {
@@ -46,6 +50,7 @@ public class ResourceManager : MonoBehaviour
 
     public void AddResource(ResourceTypeSO resourceType, int amount) {
         resourceAmountDictionary[resourceType] += amount;
+        TestLogResourceAmountDictionary();
     }
 
 }
