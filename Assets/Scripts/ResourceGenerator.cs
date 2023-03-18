@@ -18,10 +18,8 @@ public class ResourceGenerator : MonoBehaviour{
         timer -= Time.deltaTime;
         if(timer <= 0f) {
             timer += timerMax;
-            Debug.Log(buildingType.resourceGeneratorData.resourceType.resourceName);
             ResourceManager.Instance.AddResource(buildingType.resourceGeneratorData.resourceType, 1);
         }
-
     }
 
 
