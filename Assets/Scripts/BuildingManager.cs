@@ -12,7 +12,6 @@ public class BuildingManager : MonoBehaviour{
         public BuildingTypeSO activeBuildingType;
     }
 
-
     private Camera mainCamera;
     private BuildingTypeListSO buildingTypeList;
     private BuildingTypeSO activeBuildingType;
@@ -25,7 +24,6 @@ public class BuildingManager : MonoBehaviour{
 
     private void Start() {
         mainCamera = Camera.main;
-
     }
 
     private void Update() {
