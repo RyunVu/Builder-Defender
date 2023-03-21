@@ -56,6 +56,7 @@ public class CameraHandler : MonoBehaviour{
     }
 
     private void HandleZoom() {
+
         float zoomAmount = 2f;
         targetOrthographicSize += -Input.mouseScrollDelta.y * zoomAmount;
 
