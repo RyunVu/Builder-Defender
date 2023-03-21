@@ -9,4 +9,8 @@ public class ResourceGeneratorData{
 
     public ResourceTypeSO resourceType;
 
+    public float resourceDetectionRadius;
+
+    public int maxResourceAmount;
+
 }

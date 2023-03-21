@@ -51,7 +51,7 @@ public class CameraHandler : MonoBehaviour{
 
         Vector3 moveDir = new Vector3(inputDir.x, inputDir.y).normalized;
 
-        float moveSpeed = 4f;
+        float moveSpeed = 2.5f;
         transform.position += moveDir * moveSpeed * Time.deltaTime * orthographicSize;
     }
 
