@@ -39,8 +39,6 @@ public class ResourceGenerator : MonoBehaviour{
             // The more resource nodes, the faster the resource is gain
             timerMax = ((resourceGeneratorData.timerMax / 2f) + resourceGeneratorData.timerMax * (1 - (float)nearbyResourceAmount / resourceGeneratorData.maxResourceAmount));
         }
-
-        Debug.Log("nearbyResourceAmount: " + nearbyResourceAmount + "; timerMax: " + timerMax + "; totalResourceAmount: " + resourceGeneratorData.maxResourceAmount * nearbyResourceAmount);
     }
 
     private void Update() {

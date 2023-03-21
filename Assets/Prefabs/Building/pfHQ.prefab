@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4786615460432420183}
   - component: {fileID: 4786615460432420176}
-  - component: {fileID: 677575002488936391}
+  - component: {fileID: 8642054244472182619}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ead931dd91bff8489e75de9c414f17f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7030b8e3eb49e8440ae8eb3ec8b45d05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &677575002488936391
+--- !u!114 &8642054244472182619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,11 +108,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4786615461208551939}
-  - component: {fileID: 5882522354219329833}
-  - component: {fileID: 5748957605672216018}
-  - component: {fileID: 8364086297642975109}
+  - component: {fileID: 7104984522062993548}
+  - component: {fileID: 1081945168205853377}
+  - component: {fileID: 4036843818947324163}
   m_Layer: 0
-  m_Name: pfGoldHarvester
+  m_Name: pfHQ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5882522354219329833
+--- !u!114 &7104984522062993548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c045b4cbf7d73a24fb98ab9aaaee4853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5748957605672216018
+--- !u!114 &1081945168205853377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b55eba3b5efa2947ad18606fd517788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: {fileID: 11400000, guid: 87d8c9c9dda89984b846056598c17111, type: 2}
---- !u!61 &8364086297642975109
+  buildingType: {fileID: 11400000, guid: c08c06bf8ab5be14eafc36a511fb55ad, type: 2}
+--- !u!61 &4036843818947324163
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.20275807}
+  m_Offset: {x: 0.031019688, y: 1.2125692}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -183,5 +183,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.69, y: 4.257206}
+  m_Size: {x: 5.62796, y: 7.08786}
   m_EdgeRadius: 0
