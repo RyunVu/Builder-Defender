@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class ResourceManager : MonoBehaviour
-{
+public class ResourceManager : MonoBehaviour {
     public static ResourceManager Instance { get; private set; }
 
     public event EventHandler OnResourcesGenerator;
@@ -23,26 +23,24 @@ public class ResourceManager : MonoBehaviour
         foreach (ResourceTypeSO resourceType in resourceTypeList.list) {
             resourceAmountDictionary[resourceType] = 0;
         }
-
         //TestLogResourceAmountDictionary();
-
-    }   
+    }
 
     //private void Update() {
-        //if (Input.GetKeyDown(KeyCode.T)) {
-        //    AddResource(resourceTypeList.list[0],2);
-        //    TestLogResourceAmountDictionary();
-        //}
+    //if (Input.GetKeyDown(KeyCode.T)) {
+    //    AddResource(resourceTypeList.list[0],2);
+    //    TestLogResourceAmountDictionary();
+    //}
 
-        //if (Input.GetKeyDown(KeyCode.Y)) {
-        //    AddResource(resourceTypeList.list[1], 5);
-        //    TestLogResourceAmountDictionary();
-        //}
+    //if (Input.GetKeyDown(KeyCode.Y)) {
+    //    AddResource(resourceTypeList.list[1], 5);
+    //    TestLogResourceAmountDictionary();
+    //}
 
-        //if (Input.GetKeyDown(KeyCode.U)) {
-        //    AddResource(resourceTypeList.list[2], 8);
-        //    TestLogResourceAmountDictionary();
-        //}
+    //if (Input.GetKeyDown(KeyCode.U)) {
+    //    AddResource(resourceTypeList.list[2], 8);
+    //    TestLogResourceAmountDictionary();
+    //}
     //}
 
     private void TestLogResourceAmountDictionary() {
@@ -61,4 +59,18 @@ public class ResourceManager : MonoBehaviour
         return resourceAmountDictionary[resourceType];
     }
 
+    public bool CanAfford(ResourceAmount[] resourceAmountArray) {
+        foreach (ResourceAmount resourceAmount in resourceAmountArray) {
+            if (GetResourceAmount(resourceAmount.resourceType) < resourceAmount.amount)
+                // Can't afford any
+                return false;
+        }
+        return true;
+    }
+
+    public void SpendResources(ResourceAmount[] resourceAmountArray) {
+        foreach (ResourceAmount resourceAmount in resourceAmountArray) {
+            resourceAmountDictionary[resourceAmount.resourceType] -= resourceAmount.amount;
+        }
+    }
 }
