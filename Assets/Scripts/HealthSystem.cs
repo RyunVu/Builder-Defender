@@ -32,6 +32,10 @@ public class HealthSystem : MonoBehaviour{
         
     }
 
+    public bool IsFullHealth() {
+        return healthAmount == healthMax;
+    }
+
     public int GetHealthAmount(){
         return healthAmount;
     }
@@ -40,5 +44,12 @@ public class HealthSystem : MonoBehaviour{
         return (float)healthAmount / healthMax; 
     }
 
+    public void SetHealthAmountMax(int healthAmountMax, bool updateHealthAmount) {
+        this.healthMax = healthAmountMax;
+
+        if(updateHealthAmount) {
+            healthAmount = healthAmountMax;
+        }
+    }
 
 }

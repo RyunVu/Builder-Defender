@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5051064010180093684, guid: 1fa6caf6340ad4c48bbb146c29b55a61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 5051064010180093684, guid: 1fa6caf6340ad4c48bbb146c29b55a61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -401,8 +401,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: pfHealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 8303870263705966177, guid: 1fa6caf6340ad4c48bbb146c29b55a61, type: 3}
+      propertyPath: barTransform
+      value: 
+      objectReference: {fileID: 1591608558046004945}
+    - target: {fileID: 8303870263705966177, guid: 1fa6caf6340ad4c48bbb146c29b55a61, type: 3}
+      propertyPath: healthSystem
+      value: 
+      objectReference: {fileID: 849764027935679916}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa6caf6340ad4c48bbb146c29b55a61, type: 3}
+--- !u!4 &1591608558046004945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5051064010683828853, guid: 1fa6caf6340ad4c48bbb146c29b55a61, type: 3}
+  m_PrefabInstance: {fileID: 5768685035017997476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1591608558482844240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5051064010180093684, guid: 1fa6caf6340ad4c48bbb146c29b55a61, type: 3}
