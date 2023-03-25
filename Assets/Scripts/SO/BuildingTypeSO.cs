@@ -6,17 +6,12 @@ using UnityEngine;
 public class BuildingTypeSO : ScriptableObject{
 
     public string nameBuilding;
-
     public Transform prefab;
-
+    public bool hasResourceGeneratorData;
     public ResourceGeneratorData resourceGeneratorData;
-
     public Sprite sprite;
-
     public float minContructionRadius;
-
     public ResourceAmount[] constructionResourceCostArray;
-
     public int healthAmountMax;
 
     public string GetContructionResourceCostString() {

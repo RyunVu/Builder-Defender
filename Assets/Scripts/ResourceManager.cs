@@ -9,6 +9,8 @@ public class ResourceManager : MonoBehaviour {
 
     public event EventHandler OnResourcesGenerator;
 
+    [SerializeField] private List<ResourceAmount> startingResourceAmountList;
+
     // Every ResourceTypeSO with match with the certain int for the value
     private Dictionary<ResourceTypeSO, int> resourceAmountDictionary;
     private ResourceTypeListSO resourceTypeList;
@@ -23,6 +25,11 @@ public class ResourceManager : MonoBehaviour {
         foreach (ResourceTypeSO resourceType in resourceTypeList.list) {
             resourceAmountDictionary[resourceType] = 0;
         }
+
+        foreach (ResourceAmount resourceAmount in startingResourceAmountList) {
+            AddResource(resourceAmount.resourceType, resourceAmount.amount);
+        }
+
         //TestLogResourceAmountDictionary();
     }
 
@@ -51,7 +58,7 @@ public class ResourceManager : MonoBehaviour {
 
     public void AddResource(ResourceTypeSO resourceType, int amount) {
         resourceAmountDictionary[resourceType] += amount;
-        OnResourcesGenerator(this, EventArgs.Empty);
+        OnResourcesGenerator?.Invoke(this, EventArgs.Empty);
         //TestLogResourceAmountDictionary();
     }
 

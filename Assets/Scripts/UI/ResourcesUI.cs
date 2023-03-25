@@ -34,11 +34,11 @@ public class ResourcesUI : MonoBehaviour {
 
     private void Start() {
         UpdateResourceAmount();
-        ResourceManager.Instance.OnResourcesGenerator += Instance_OnResourcesGenerator;
+        ResourceManager.Instance.OnResourcesGenerator += ResourceManager_OnResourcesGenerator;
 
     }
 
-    private void Instance_OnResourcesGenerator(object sender, System.EventArgs e) {
+    private void ResourceManager_OnResourcesGenerator(object sender, System.EventArgs e) {
         UpdateResourceAmount();
     }
 
