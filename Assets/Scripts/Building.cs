@@ -14,8 +14,6 @@ public class Building : MonoBehaviour{
         healthSystem.OnDied += HealthSystem_OnDied;
     }
     
-
-
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
         Destroy(gameObject);
     }
