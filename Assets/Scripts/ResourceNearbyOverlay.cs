@@ -10,8 +10,9 @@ public class ResourceNearbyOverlay : MonoBehaviour{
         Hide();
     }
 
+
     private void Update() {
-        int nearbyResourceAmount = ResourceGenerator.GetNearbyResourceAmount(resourceGeneratorData, transform.position);
+        float nearbyResourceAmount = ResourceGenerator.GetNearbyResourceAmount(resourceGeneratorData, transform.position);
         float precent = Mathf.RoundToInt((float)nearbyResourceAmount / resourceGeneratorData.maxResourceAmount * 100f);
         transform.Find("text").GetComponent<TextMeshPro>().SetText(precent + "%");
     }

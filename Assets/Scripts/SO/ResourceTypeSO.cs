@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ResourceTypeSO : ScriptableObject
 {
     public string resourceName;
-
+    public string nameShort;
     public Sprite resourceSprite;
+    public string colorHex;
 }
