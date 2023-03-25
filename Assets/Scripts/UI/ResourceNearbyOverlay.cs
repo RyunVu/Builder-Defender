@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +12,9 @@ public class ResourceNearbyOverlay : MonoBehaviour{
     private void Update() {
         float nearbyResourceAmount = ResourceGenerator.GetNearbyResourceAmount(resourceGeneratorData, transform.position);
         float precent = Mathf.RoundToInt((float)nearbyResourceAmount / resourceGeneratorData.maxResourceAmount * 100f);
+        //if (nearbyResourceAmount == 0) {
+        //    precent = 0;
+        //}
         transform.Find("text").GetComponent<TextMeshPro>().SetText(precent + "%");
     }
 

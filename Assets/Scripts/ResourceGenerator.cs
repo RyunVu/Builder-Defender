@@ -64,7 +64,10 @@ public class ResourceGenerator : MonoBehaviour{
     }
 
     public float GetAmountGeneratedPerSecond() {
-        return 1 / timerMax;
+        if (GetNearbyResourceAmount(resourceGeneratorData, UtilsClass.GetMouseWorldPositison()) > 0)
+            return 1 / timerMax;
+        else
+            return 0;
     }
 
 }
