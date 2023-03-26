@@ -34,7 +34,8 @@ public class BuildingManager : MonoBehaviour{
                 if (CanSpawnBuilding(activeBuildingType, UtilsClass.GetMouseWorldPositison(), out string errorMessage)) {
                     if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionResourceCostArray)) {
                         ResourceManager.Instance.SpendResources(activeBuildingType.constructionResourceCostArray);
-                        Instantiate(activeBuildingType.prefab, UtilsClass.GetMouseWorldPositison(), Quaternion.identity);
+                        //Instantiate(activeBuildingType.prefab, UtilsClass.GetMouseWorldPositison(), Quaternion.identity);
+                        BuildingContruction.Create(UtilsClass.GetMouseWorldPositison(), activeBuildingType);
                     }
                     else {
                         TooltipUI.Instance.Show("Cann't afford " + activeBuildingType.GetContructionResourceCostString(), new TooltipUI.TooltipTimer { timer = 2f });
