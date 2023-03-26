@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour{
     }
 
     private void HandleMovement() {
-        if (targetTransform.position != null) {
+        if (targetTransform != null) {
             Vector3 moveDir = (targetTransform.position - transform.position).normalized;
 
             float moveSpeed = 6f;
@@ -76,6 +76,7 @@ public class Enemy : MonoBehaviour{
                 // Check for current target
                 if (targetTransform == null) {
                     targetTransform = building.transform;
+                    Debug.Log(targetTransform.name);
                 }
 
                 // If not we already have a target

@@ -16,7 +16,7 @@ public class ArrowProjectile : MonoBehaviour{
 
     private Enemy targetEnemy;
     private Vector3 lastMoveDir;
-    private float TimeToDie = 2f;
+    private float TimeToDie = 5f;
 
     private void Update() {
         Vector3 moveDir;
