@@ -37,7 +37,7 @@ public class OptionsUI : MonoBehaviour{
         });
 
         _mainMenuBtn.onClick.AddListener(() => {
-
+            GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene);
         });
 
     }
