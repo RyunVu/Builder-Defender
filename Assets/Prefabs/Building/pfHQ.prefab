@@ -786,7 +786,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pfResourceGeneratorOverlay
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7643251613741927102, guid: c840892de3bbce241867284407dfe46b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c840892de3bbce241867284407dfe46b, type: 3}
 --- !u!4 &2680631584382198430 stripped
 Transform:

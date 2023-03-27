@@ -28,8 +28,7 @@ public class HealthSystem : MonoBehaviour{
     }
 
     public bool IsDead() {
-        return healthAmount == 0;
-        
+        return healthAmount == 0;        
     }
 
     public bool IsFullHealth() {

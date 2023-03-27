@@ -21,7 +21,9 @@ public class Enemy : MonoBehaviour{
 
     private void Start() {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+        if (BuildingManager.Instance.GetHQBuilding() != null) {
+            targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+        }
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDied += HealthSystem_OnDied;
         lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
@@ -76,7 +78,6 @@ public class Enemy : MonoBehaviour{
                 // Check for current target
                 if (targetTransform == null) {
                     targetTransform = building.transform;
-                    Debug.Log(targetTransform.name);
                 }
 
                 // If not we already have a target
@@ -90,7 +91,10 @@ public class Enemy : MonoBehaviour{
             }
             
             if (targetTransform == null) {
-                targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+
+                if (BuildingManager.Instance.GetHQBuilding() != null) {
+                    targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+                }
             }
         }
     }

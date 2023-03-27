@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -26,6 +27,12 @@ public class BuildingManager : MonoBehaviour{
 
     private void Start() {
         mainCamera = Camera.main;
+
+        hqBuilding.GetComponent<HealthSystem>().OnDied += HQ_OnDied;
+    }
+
+    private void HQ_OnDied(object sender, EventArgs e) {
+        GameOverUI.Instance.Show();
     }
 
     private void Update() {
