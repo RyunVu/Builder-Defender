@@ -32,6 +32,7 @@ public class BuildingManager : MonoBehaviour{
     }
 
     private void HQ_OnDied(object sender, EventArgs e) {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
         GameOverUI.Instance.Show();
     }
 
@@ -43,6 +44,7 @@ public class BuildingManager : MonoBehaviour{
                         ResourceManager.Instance.SpendResources(activeBuildingType.constructionResourceCostArray);
                         //Instantiate(activeBuildingType.prefab, UtilsClass.GetMouseWorldPositison(), Quaternion.identity);
                         BuildingContruction.Create(UtilsClass.GetMouseWorldPositison(), activeBuildingType);
+                        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
                     }
                     else {
                         TooltipUI.Instance.Show("Cann't afford " + activeBuildingType.GetContructionResourceCostString(), new TooltipUI.TooltipTimer { timer = 2f });
