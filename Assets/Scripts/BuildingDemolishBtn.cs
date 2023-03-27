@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuidlingDemolishBtn : MonoBehaviour{
+public class BuildingDemolishBtn : MonoBehaviour{
 
     [SerializeField] private Building building;
 

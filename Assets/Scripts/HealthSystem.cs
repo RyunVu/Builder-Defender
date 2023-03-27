@@ -6,6 +6,7 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour{
 
     public event EventHandler OnDamagedTaken;
+    public event EventHandler OnHeal;
     public event EventHandler OnDied;
 
 
@@ -26,6 +27,18 @@ public class HealthSystem : MonoBehaviour{
             OnDied?.Invoke(this, EventArgs.Empty);
         }
     }
+    public void Heal(int healAmount) {
+        healthAmount += healAmount;
+        healthAmount = Mathf.Clamp(healthAmount, 0, healthMax);
+
+        OnHeal?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void HealFull() {
+        healthAmount = healthMax;
+
+        OnHeal?.Invoke(this, EventArgs.Empty);
+    }
 
     public bool IsDead() {
         return healthAmount == 0;        
@@ -39,6 +52,10 @@ public class HealthSystem : MonoBehaviour{
         return healthAmount;
     }
 
+    public int GetHealthAmountMax() {
+        return healthMax;
+    }
+
     public float GetHealthAmountNormalized() {
         return (float)healthAmount / healthMax; 
     }
@@ -50,5 +67,6 @@ public class HealthSystem : MonoBehaviour{
             healthAmount = healthAmountMax;
         }
     }
+
 
 }
