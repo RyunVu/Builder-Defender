@@ -6,8 +6,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour{
 
     public static Enemy Create(Vector3 position) {
-        Transform pfEnemy = Resources.Load<Transform>("pfEnemy");
-        Transform enemyTransform = Instantiate(pfEnemy, position, Quaternion.identity);
+        //Transform pfEnemy = Resources.Load<Transform>(GameAssets.Instance.pfEnemy);
+        Transform enemyTransform = Instantiate(GameAssets.Instance.pfEnemy, position, Quaternion.identity);
 
         Enemy enemy = enemyTransform.GetComponent<Enemy>();
         return enemy;
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour{
     private void HealthSystem_OnDied(object sender, System.EventArgs e) {
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
         CineMachineShake.Instance.ShakeCamera(5f, .15f);
-        Instantiate(Resources.Load<Transform>("pfEnemyDieParticles"), transform.position, Quaternion.identity);
+        Instantiate(GameAssets.Instance.pfEnemyDieParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

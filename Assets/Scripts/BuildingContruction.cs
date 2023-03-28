@@ -5,8 +5,7 @@ using UnityEngine;
 public class BuildingContruction : MonoBehaviour{
 
     public static BuildingContruction Create(Vector3 position, BuildingTypeSO buildingType) {
-        Transform pfBuildingContruction = Resources.Load<Transform>("pfBuildingContruction");
-        Transform BuildingContructionTransform = Instantiate(pfBuildingContruction, position, Quaternion.identity);
+        Transform BuildingContructionTransform = Instantiate(GameAssets.Instance.pfBuildingContruction, position, Quaternion.identity);
 
         BuildingContruction buildingContruction = BuildingContructionTransform.GetComponent<BuildingContruction>();
         buildingContruction.SetBuildingType(buildingType);
@@ -28,7 +27,7 @@ public class BuildingContruction : MonoBehaviour{
         buildingTypeHolder = GetComponent<BuildingTypeHolder>();
         contructionMaterial = spriteRenderer.material;
 
-        Instantiate(Resources.Load<Transform>("pfBuildingPlacedParticles"), transform.position, Quaternion.identity);
+        Instantiate(GameAssets.Instance.pfBuildingPlacedParticles, transform.position, Quaternion.identity);
     }
 
     private void Update() {
@@ -38,7 +37,7 @@ public class BuildingContruction : MonoBehaviour{
 
         if (constructionTimer <= 0f ) {
             Instantiate(buildingType.prefab, transform.position, Quaternion.identity);
-            Instantiate(Resources.Load<Transform>("pfBuildingPlacedParticles"), transform.position, Quaternion.identity);
+            Instantiate(GameAssets.Instance.pfBuildingPlacedParticles, transform.position, Quaternion.identity);
             SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
             Destroy(gameObject);
         }
