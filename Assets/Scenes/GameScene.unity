@@ -3584,6 +3584,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 6
     m_NumAlphaKeys: 2
+  _secondsPerDay: 10
 --- !u!1001 &629089645
 PrefabInstance:
   m_ObjectHideFlags: 0
